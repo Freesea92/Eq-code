@@ -13,7 +13,7 @@ cd(fileparts(which(mfilename)));
 
 %% Generate original data
 % OriginalData = generateData();
-OriginalData = importdata('G:\MY FILES\科研\DSP CODE\50G PAM4-MLSE-Volterra-FFE\826data\data sequence.mat');
+OriginalData = importdata('G:\MY FILES\驴脝脩脨\DSP CODE\50G PAM4-MLSE-Volterra-FFE\826data\data sequence.mat');
 OriginalData(find(OriginalData==0.68))=2;
 OriginalData(find(OriginalData==0))=0;
 OriginalData(find(OriginalData==1))=3;
@@ -24,11 +24,7 @@ SampleRate = 400e9;
 OSCRate = 80e9;
 DataRate = 25e9;
 OverSamplingRatio = SampleRate / DataRate;
-% importing and eyediagram drawing
-SampledSignal = importdata('G:\MY FILES\科研\DSP CODE\50G PAM4-MLSE-Volterra-FFE\826data\ebtb.txt');
-SampledSignal = resample(SampledSignal, SampleRate, OSCRate);
-eyediagram(SampledSignal(1:100000), 4*OverSamplingRatio, 2*OverSamplingRatio, 0.5*OverSamplingRatio);
-grid on;
+
 
 %% Signal Synchronization and Extraction
 [ExtractedSignal, OriginalSignal] = syncAndExtractSignal(SampledSignal, OriginalData, OverSamplingRatio);
