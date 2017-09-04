@@ -47,9 +47,4 @@ fprintf('Bit number num: %d \n', BitErrorNum);
 fprintf('SER: %e\n', SymErrorRate);
 fprintf('BER: %e\n', BitErrorRate);
 
-% For the equalized signal
-[BitErrorRate, SymErrorRate, BitErrorNum] = decisionAndCalcBerPAM4(EqualizedSignal, OriginalData');
-fprintf('\nThe signal error after equalization\n');
-fprintf('Bit number num: %d \n', BitErrorNum);
-fprintf('SER: %e\n', SymErrorRate);
-fprintf('BER: %e\n', BitErrorRate);
+
